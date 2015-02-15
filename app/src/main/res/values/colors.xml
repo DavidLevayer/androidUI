@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="menu_text">#000</color>
+    <color name="menu_background">#FFF</color>
+    <color name="menu_selected">#FF0000</color>
+
+    <color name="actionbar_gradient_start">#FFF</color>
+    <color name="actionbar_gradient_end">#0000</color>
+
+    <color name="news_title">#ffab09</color>
+    <color name="news_title_dark">#c2840b</color>
+    <color name="news_subtitle">#000</color>
+    <color name="news_date">#000</color>
+
+</resources>
