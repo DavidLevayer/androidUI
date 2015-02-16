@@ -124,7 +124,6 @@ public abstract class FadingActionBarHelperBase {
 
         //
         // See if we are in a ListView, WebView or ScrollView scenario
-
         ListView listView = (ListView) mContentView.findViewById(android.R.id.list);
         View root;
         if (listView != null) {

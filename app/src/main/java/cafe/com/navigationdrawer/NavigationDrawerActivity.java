@@ -38,8 +38,8 @@ public class NavigationDrawerActivity extends Activity implements AdapterView.On
 
     private CharSequence mDrawerTitle;
     private CharSequence mTitle;
-    private String[] mCityNames;
-    private int[] mCityImages;
+    private String[] mMenuNames;
+    private int[] mMenuImages;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,11 +48,11 @@ public class NavigationDrawerActivity extends Activity implements AdapterView.On
 
         mTitle = mDrawerTitle = getTitle();
 
-        mCityNames = getResources().getStringArray(R.array.drawer_items);
-        TypedArray typedArray = getResources().obtainTypedArray(R.array.city_images);
-        mCityImages = new int [typedArray.length()];
+        mMenuNames = getResources().getStringArray(R.array.drawer_items);
+        TypedArray typedArray = getResources().obtainTypedArray(R.array.menu_images);
+        mMenuImages = new int [typedArray.length()];
         for (int i = 0; i < typedArray.length(); ++i) {  
-            mCityImages[i] = typedArray.getResourceId(i, 0);
+            mMenuImages[i] = typedArray.getResourceId(i, 0);
         }
         typedArray.recycle();
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -63,7 +63,7 @@ public class NavigationDrawerActivity extends Activity implements AdapterView.On
 
         // set up the drawer's list view with items and click listener
         mDrawerList.setAdapter(new ArrayAdapter<String>(this,
-                R.layout.drawer_list_item, mCityNames));
+                R.layout.drawer_list_item, mMenuNames));
         mDrawerList.setOnItemClickListener(this);
 
         // enable ActionBar app icon to behave as action to toggle
@@ -138,7 +138,7 @@ public class NavigationDrawerActivity extends Activity implements AdapterView.On
         }
 
         Bundle args = new Bundle();
-        args.putInt(SampleFragment.ARG_IMAGE_RES, mCityImages[position]);
+        args.putInt(SampleFragment.ARG_IMAGE_RES, mMenuImages[position]);
         args.putInt(SampleFragment.ARG_ACTION_BG_RES, R.drawable.ab_background);
         args.putInt(SampleFragment.ARG_LAYOUT_ID, viewId);
         fragment.setArguments(args);
@@ -149,7 +149,7 @@ public class NavigationDrawerActivity extends Activity implements AdapterView.On
 
         // update selected item and title, then close the drawer
         mDrawerList.setItemChecked(position, true);
-        setTitle(mCityNames[position]);
+        setTitle(mMenuNames[position]);
         mDrawerLayout.closeDrawer(mDrawerList);
     }
 
